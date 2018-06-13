@@ -1,0 +1,66 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "My App",
+  "scripts": {
+    "test": "eslint src && jest --coverage",
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Emi-C/react-app-boilerplate.git"
+  },
+  "author": "Emi-C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Emi-C/react-app-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Emi-C/react-app-boilerplate#readme",
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^1.0.0-rc.8",
+    "jest": "^22.4.3",
+    "node-sass": "^4.9.0",
+    "prop-types": "^15.6.1",
+    "react-test-renderer": "^16.4.0",
+    "redux-devtools": "^3.4.1",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
