@@ -10,6 +10,7 @@
         "root": ["./src"],
         "alias":{
           "Home":"./src/Home",
+          "Login":"./src/Login",
           "Profile":"./src/Profile",
           "reduxUtils":"./src/reduxUtils",
           "router":"./src/router",

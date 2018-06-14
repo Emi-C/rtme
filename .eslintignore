@@ -1,2 +1,3 @@
 testSetup.js
 *.test.js
+AuthHandler.js
