@@ -1,6 +1,7 @@
 import { all } from 'redux-saga/effects';
+import AppSaga from 'App/redux/behaviorSagas';
 import HomeSaga from 'Home/redux/behaviorSagas';
 
 export default function* sagas() {
-  yield all([HomeSaga()]);
+  yield all([HomeSaga(), AppSaga()]);
 }

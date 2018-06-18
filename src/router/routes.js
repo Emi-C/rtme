@@ -5,6 +5,7 @@ import Profile from 'Profile';
 export default [
   {
     id: 0,
+    login: true,
     component: Login,
     navText: 'Login',
     path: '/',
@@ -22,5 +23,11 @@ export default [
     component: Profile,
     navText: 'Profile',
     path: '/profile',
+  },
+  {
+    id: 8,
+    component: Profile,
+    navText: 'Settings',
+    path: '/settings',
   },
 ];

@@ -9,6 +9,8 @@
       ["module-resolver", {
         "root": ["./src"],
         "alias":{
+          "Auth":"./src/Auth",
+          "App":"./src/App",
           "Home":"./src/Home",
           "Login":"./src/Login",
           "Profile":"./src/Profile",

@@ -1,16 +1,11 @@
 import React from 'react';
 
 class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { toggle: true };
-  }
-
   fbLogin = () => {
-    window.FB.login(function(response) {
+    window.FB.login((response) => {
       if (response.authResponse) {
-        window.FB.api('/me', function(response) {
-          console.log('Good to see you, ' + response.name + '.');
+        window.FB.api('/me', (responseApi) => {
+          console.log(`Good to see you, ${responseApi.name}.`);
         });
       } else {
         console.log('do nothing');
@@ -19,7 +14,7 @@ class Login extends React.Component {
   };
 
   // fbLogout = () => {
-  //   window.FB.logout(function(response) {
+  //   window.FB.logout((response) => {
   //     console.log(response, ' logout');
   //   });
   // };

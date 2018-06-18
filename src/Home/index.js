@@ -1,4 +1,3 @@
-//connection
 import { connect } from 'react-redux';
 import actions from 'reduxUtils/actions';
 import Home from './template';
@@ -13,6 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
 const mapStateToProps = (state) => ({
   counter: state.home.counter,
   salutation: 'Hello',
+  auth: state.app,
 });
 
 export default connect(
