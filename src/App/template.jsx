@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Router from 'router';
+import { BrowserRouter } from 'react-router-dom';
+import AppRouter from 'router';
 
 class App extends React.Component {
   componentDidMount() {
@@ -9,7 +9,13 @@ class App extends React.Component {
   }
 
   render() {
-    return this.props.fbInit ? <Router /> : <p>loading...</p>;
+    return this.props.fbInit ? (
+      <BrowserRouter>
+        <AppRouter />
+      </BrowserRouter>
+    ) : (
+      <p>loading...</p>
+    );
   }
 }
 
