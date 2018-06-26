@@ -1,34 +1,23 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import actions from 'reduxUtils/actions';
-import { authCheck, authLogin } from 'Auth';
+import { authCheckRequest } from 'App/redux/functionalSagas';
+import authLoginRequest from './functionalSagas';
 
 function* bootstrap() {
   try {
-    const authData = yield call(authCheck);
-    console.log(authData);
-    yield put(
-      actions.LOGIN.BOOTSTRAP_SUCCESS.create({
-        accessToken: authData.authResponse.accessToken,
-        userId: authData.authResponse.userID,
-      })
-    );
+    yield call(authCheckRequest);
+    yield put(actions.LOGIN.BOOTSTRAP_SUCCESS.create());
   } catch (err) {
     yield put(actions.LOGIN.BOOTSTRAP_ERROR.create());
-    console.log(err);
+    throw err;
   }
 }
 
 function* fbLogin() {
   try {
-    yield call(authLogin);
-    const authData = yield call(authCheck);
-    console.log(authData);
-    yield put(
-      actions.LOGIN.FBLOGIN_SUCCESS.create({
-        accessToken: authData.authResponse.accessToken,
-        userId: authData.authResponse.userID,
-      })
-    );
+    yield call(authLoginRequest);
+    yield call(authCheckRequest);
+    yield put(actions.LOGIN.FBLOGIN_SUCCESS.create());
   } catch (err) {
     yield put(actions.LOGIN.FBLOGIN_ERROR.create());
     throw err;

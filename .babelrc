@@ -14,7 +14,7 @@
           "Home":"./src/Home",
           "Login":"./src/Login",
           "Logout":"./src/Logout",
-          "Profile":"./src/Profile",
+          "Rate":"./src/Rate",
           "Settings":"./src/Settings",
           "reduxUtils":"./src/reduxUtils",
           "router":"./src/router",

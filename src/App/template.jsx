@@ -11,7 +11,7 @@ class App extends React.Component {
   render() {
     return this.props.fbInit ? (
       <BrowserRouter>
-        <AppRouter />
+        <AppRouter userId={this.props.userId} />
       </BrowserRouter>
     ) : (
       <p>loading...</p>
@@ -21,6 +21,7 @@ class App extends React.Component {
 
 App.propTypes = {
   fbInit: PropTypes.bool.isRequired,
+  userId: PropTypes.string.isRequired,
   bootstrap: PropTypes.func.isRequired,
 };
 

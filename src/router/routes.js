@@ -1,7 +1,7 @@
 import Home from 'Home';
 import Login from 'Login';
 import Logout from 'Logout';
-import Profile from 'Profile';
+import Rate from 'Rate';
 import Settings from 'Settings';
 
 export default [
@@ -22,21 +22,20 @@ export default [
   {
     id: 2,
     private: true,
-    component: Profile,
-    navText: 'Profile',
-    path: '/profile',
+    component: Rate,
+    navText: 'Rate',
+    path: '/rate',
   },
   {
-    id: 10,
-    private: true,
-    component: Logout,
-    navText: 'Logout',
-    path: '/logout',
-  },
-  {
-    id: 11,
+    id: 3,
     component: Settings,
     navText: 'Settings',
     path: '/settings',
+  },
+  {
+    id: 4,
+    component: Logout,
+    navText: 'Logout',
+    path: '/logout',
   },
 ];

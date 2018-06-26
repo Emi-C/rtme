@@ -1,23 +1,40 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Navigator from 'router/Navigator';
+import PropTypes from 'prop-types';
+import { Switch, Route, Link, NavLink } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
+import Navigator from './Navigator';
 import routes from './routes';
 
-const AppRouter = () => (
+const AppRouter = (props) => (
   <React.Fragment>
+    {props.userId && <Link to="/logout">logout</Link>}
     <Switch>
       {routes.map((route) => {
         if (route.private) {
           return (
-            <PrivateRoute key={route.id} exact path={route.path} component={route.component} />
+            <PrivateRoute
+              userId={props.userId}
+              key={route.id}
+              exact
+              path={route.path}
+              component={route.component}
+            />
           );
         }
         return <Route key={route.id} exact path={route.path} component={route.component} />;
       })}
     </Switch>
-    <Navigator />
+    {props.userId && (
+      <NavLink to="/settings" activeClassName="active">
+        settings
+      </NavLink>
+    )}
+    {props.userId && <Navigator />}
   </React.Fragment>
 );
+
+AppRouter.propTypes = {
+  userId: PropTypes.string.isRequired,
+};
 
 export default AppRouter;

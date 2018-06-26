@@ -1,15 +1,12 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import actions from 'reduxUtils/actions';
-import { authInit } from 'Auth';
+import { authInitRequest, authCheckRequest } from './functionalSagas';
 
 function* bootstrap() {
   try {
-    yield call(authInit);
-    yield put(
-      actions.APP.BOOTSTRAP_SUCCESS.create({
-        fbInit: true,
-      })
-    );
+    yield call(authInitRequest);
+    yield call(authCheckRequest);
+    yield put(actions.APP.BOOTSTRAP_SUCCESS.create());
   } catch (err) {
     yield put(actions.APP.BOOTSTRAP_ERROR.create());
     throw err;

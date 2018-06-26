@@ -9,8 +9,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-  userId: state.login.userId,
-  accessToken: state.login.accessToken,
+  userId: state.app.userId,
+  accessToken: state.app.accessToken,
 });
 
 export default connect(

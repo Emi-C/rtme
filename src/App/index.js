@@ -9,6 +9,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 const mapStateToProps = (state) => ({
   fbInit: state.app.fbInit,
+  userId: state.app.userId,
 });
 
 export default connect(

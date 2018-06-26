@@ -4,9 +4,8 @@ import { authLogout } from 'Auth';
 
 function* fbLogout() {
   try {
-    const logoutResponse = yield call(authLogout);
-    console.log(logoutResponse);
-    yield put(actions.LOGOUT.FBLOGOUT_SUCCESS.create());
+    yield call(authLogout);
+    yield put(actions.LOGOUT.FBLOGOUT_SUCCESS.create()); //App reducer
   } catch (err) {
     yield put(actions.LOGOUT.FBLOGOUT_ERROR.create());
     throw err;

@@ -1,6 +1,7 @@
 const actions = {
-  //BEHAVIOUR ACTION SAGAS
   BOOTSTRAP: 'BOOTSTRAP',
+  AUTH_INIT_REQUEST: 'AUTH_INIT_REQUEST',
+  AUTH_CHECK_REQUEST: 'AUTH_CHECK_REQUEST',
 };
 
 export default actions;
