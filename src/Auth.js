@@ -22,9 +22,30 @@ const authInit = () => {
 };
 
 const authCheck = () => {
-  return new Promise((resolve) => {
-    window.FB.getLoginStatus((response) => resolve(response));
+  return new Promise((resolve, reject) => {
+    window.FB.getLoginStatus(
+      (response) =>
+        response.status === 'connected' ? resolve(response) : reject('User not logged')
+    );
   });
 };
 
-export { authInit, authCheck };
+const authLogin = () => {
+  return new Promise((resolve, reject) => {
+    window.FB.login((response) => {
+      if (response.authResponse) {
+        resolve(response.authResponse);
+      } else {
+        reject('login failed');
+      }
+    });
+  });
+};
+
+const authLogout = () => {
+  return new Promise((resolve) => {
+    window.FB.logout((response) => resolve(response));
+  });
+};
+
+export { authInit, authCheck, authLogin, authLogout };

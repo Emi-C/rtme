@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
-const PrivateRoute = ({ exact, path, component, userId }) =>
-  userId ? <Route exact={exact} path={path} component={component} /> : <Redirect to="/" />;
+const PrivateRoute = ({ exact, path, component, userId, accessToken }) =>
+  userId && accessToken ? (
+    <Route exact={exact} path={path} component={component} />
+  ) : (
+    <Redirect to="/" />
+  );
 
 PrivateRoute.defaultProps = {
   exact: false,
@@ -15,10 +19,12 @@ PrivateRoute.propTypes = {
   path: PropTypes.string.isRequired,
   component: PropTypes.func.isRequired,
   userId: PropTypes.string.isRequired,
+  accessToken: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  userId: state.app.userId,
+  userId: state.login.userId,
+  accessToken: state.login.accessToken,
 });
 
 export default connect(

@@ -4,8 +4,6 @@ const appActions = actions.APP;
 
 const initialState = {
   fbInit: false,
-  userId: '',
-  accessToken: '',
 };
 
 export default (state = initialState, action) => {

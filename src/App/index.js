@@ -1,4 +1,3 @@
-//connection
 import { connect } from 'react-redux';
 import actions from 'reduxUtils/actions';
 import Main from './template';
